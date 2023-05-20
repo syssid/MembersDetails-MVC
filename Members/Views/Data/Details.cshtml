@@ -1,0 +1,92 @@
+﻿@model Members.Models.Members
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2 class="text-danger">All Member Details</h2>
+        </div>
+    </div>
+</div>
+
+<div>
+    <hr />
+    <div class="container">
+        <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PAN_AADHAR)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PAN_AADHAR)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdentificationType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdentificationType)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Members_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Members_ID)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DOJ)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DOJ)
+        </dd>
+
+      @*  <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Photo)
+        </dd>*@
+    </dl>
+    </div>
+    
+</div>
+<p>
+    <style>
+        .btn-edit {
+            background-color: blue;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .btn-back {
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+    </style>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn-edit" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn-back" })
+
+</p>
