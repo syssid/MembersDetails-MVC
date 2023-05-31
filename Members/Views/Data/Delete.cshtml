@@ -4,8 +4,6 @@
     ViewBag.Title = "Delete";
 }
 
-
-
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -57,11 +55,19 @@
             @Html.DisplayFor(model => model.DOJ)
         </dd>
 
-    @*    <dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        @*    <dt>
             @Html.DisplayNameFor(model => model.Photo)
         </dt>*@
 
-  @*      <dd>
+        @*      <dd>
             @Html.DisplayFor(model => model.Photo)
         </dd>*@
 

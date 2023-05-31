@@ -32,7 +32,8 @@ namespace Members.Models
 					Members_ID = sdr["Member_ID"].ToString(),
 					DOJ = sdr["DOJ"].ToString(),
 					Photo = sdr["Photo"].ToString(),
-					IdentificationType = sdr["Doc_Type"].ToString()
+					IdentificationType = sdr["Doc_Type"].ToString(),
+					Email = sdr["EMAIL"].ToString()
 				});
 			}
 			con.Close();
@@ -50,6 +51,7 @@ namespace Members.Models
 			cmd.Parameters.AddWithValue("@DOJ", m.DOJ);
 			cmd.Parameters.AddWithValue("@PHOTO", m.Photo);
 			cmd.Parameters.AddWithValue("@IDTYPE", m.IdentificationType);
+			cmd.Parameters.AddWithValue("@EMAIL", m.Email);
 			bool isot;
 
 			con.Open();
@@ -89,7 +91,9 @@ namespace Members.Models
 					Members_ID = sdr["Member_ID"].ToString(),
 					DOJ = sdr["DOJ"].ToString(),
 					Photo = sdr["Photo"].ToString(),
-					IdentificationType = sdr["Doc_Type"].ToString()
+					IdentificationType = sdr["Doc_Type"].ToString(),
+					Email = sdr["EMAIL"].ToString()
+
 				});
 			}
 			con.Close();
@@ -106,6 +110,7 @@ namespace Members.Models
 			cmd.Parameters.AddWithValue("@PHONE", m.Phone);
 			cmd.Parameters.AddWithValue("@ADHAR", m.PAN_AADHAR);
 			cmd.Parameters.AddWithValue("@Doc", m.IdentificationType);
+			cmd.Parameters.AddWithValue("@Email", m.Email);
 			bool isot;
 
 			con.Open();

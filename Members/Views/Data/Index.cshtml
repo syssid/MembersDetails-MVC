@@ -46,13 +46,16 @@
                 @Html.DisplayNameFor(model => model.PAN_AADHAR)
             </th>
             @*    <th>
-                    @Html.DisplayNameFor(model => model.IdentificationType)
-                </th>*@
+            @Html.DisplayNameFor(model => model.IdentificationType)
+        </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Members_ID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DOJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Photo)
@@ -63,41 +66,44 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PAN_AADHAR)
-                </td>
-                @*       <td>
-                        @Html.DisplayFor(modelItem => item.IdentificationType)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Members_ID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DOJ)
-                </td>
-                @{
-                    var photoPath = item.Photo;
-                    var photoName = Path.GetFileName(photoPath);
-                }
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAN_AADHAR)
+            </td>
+            @*       <td>
+            @Html.DisplayFor(modelItem => item.IdentificationType)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Members_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @{
+                var photoPath = item.Photo;
+                var photoName = Path.GetFileName(photoPath);
+            }
 
-                <td>
-                    <a href="@Url.Content("~/img/" + photoName)" target="_blank" onclick="window.open('@Url.Content("~/img/" + photoName)', '_blank'); return false;">
-                        @photoName
-                    </a>
-                </td>
-                <td>
-                    @Html.ActionLink("Update", "Edit", new { id = item.ID }, new { @class = "btn btn-primary btn-sm" }) |
-                    @Html.ActionLink("Search", "Details", new { id = item.ID }, new { @class = "btn btn-info btn-sm" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-sm" })
-                </td>
-            </tr>
+            <td>
+                <a href="@Url.Content("~/img/" + photoName)" target="_blank" onclick="window.open('@Url.Content("~/img/" + photoName)', '_blank'); return false;">
+                    @photoName
+                </a>
+            </td>
+            <td>
+                @Html.ActionLink("Update", "Edit", new { id = item.ID }, new { @class = "btn btn-primary btn-sm" }) |
+                @Html.ActionLink("Search", "Details", new { id = item.ID }, new { @class = "btn btn-info btn-sm" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
         }
     </tbody>
 </table>

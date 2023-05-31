@@ -27,5 +27,8 @@ namespace Members.Models
 		public string DOJ { get; set; }
 		[Required]
 		public string Photo { get; set; }
+		[Required]
+		[EmailAddress]
+		public string Email { get; set; }
 	}
 }
