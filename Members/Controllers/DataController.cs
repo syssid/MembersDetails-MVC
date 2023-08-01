@@ -52,16 +52,12 @@ namespace Members.Controllers
                     }
                     catch (Exception ex)
                     {
-                        // Handle any errors that occurred during file upload
-                        // Log the exception or display an error message
 
                         ModelState.AddModelError(string.Empty, "Either You Entered Duplicate Aadhar PAN Number or Uploded File is Corrupted");
                     }
                 }
                 else
                 {
-                    // No file was uploaded or the file is empty
-                    // Display an error message or redirect to an appropriate action
 
                     ModelState.AddModelError(string.Empty, "Either You Entered Duplicate Aadhar PAN Number or Uploded File is Corrupted");
                 }
